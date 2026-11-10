@@ -34,7 +34,9 @@ flowchart TD
     L1 --> M{3. próba}
     M -->|SUCCESS| M1[build/ ...esp32-combo-2.0.0-beta.171+924e662-merged-full.bin]
     M1 --> N[evaluate.py --quick: 0 hiba<br/>run_tests.py: 49 hiba, mind környezeti<br/>vagy upstream / fork-CLAUDE.md eredetű]
-    N --> O([Következő: C lépés – USB flash])
+    N --> O[C lépés: flash_otgw.bat --port COM5 --bin merged-full]
+    O --> P[Flash complete / Factory reset done]
+    P --> Q([Következő: D lépés – panelbe, Wi-Fi az OTGW-MAC AP-n])
 ```
 
 ## Mit és miért
@@ -107,7 +109,8 @@ Ellenőrzések (tájékoztató jellegűek, a firmware-hez nem nyúltunk):
 ## A flash terve (még hátravan)
 
 1. ~~**B – build**~~ kész (lásd fent)
-2. **C – flash (USB):** `.\flash_otgw.bat --port COM5 --bin "build\OTGW-firmware-esp32-combo-2.0.0-beta.171+924e662-merged-full.bin"`
+2. ~~**C – flash (USB):**~~ kész, 2026-11-10: `.\flash_otgw.bat --port COM5 --bin "build\OTGW-firmware-esp32-combo-2.0.0-beta.171+924e662-merged-full.bin"` → „Flash complete. Factory reset done.”
+   (A kiírt `OTGW-^<MAC^>` csak a batch fájl kiírási hibája, a valódi név `OTGW-<MAC>`.)
    - Ha nem kapcsolódik: tartsd nyomva a 0 (BOOT) gombot, nyomd meg az RST-t, engedd el a 0-t; vagy `--baud 115200`.
 3. **D – első indítás:** a lapkát feszültségmentes panelbe tedd, a Wi-Fi-t az `OTGW-<MAC>` AP-n add meg, az IP-t DHCP-ben foglald le.
 4. **E – ellenőrzés:** webes felület IP-címmel (látszik-e a PIC 6.8), telnet napló a 23-as porton.

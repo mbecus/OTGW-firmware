@@ -119,6 +119,6 @@ A **kódolási szabályok** (5. pont és `.claude/rules/` firmware részei) visz
 > Claude frissíti egy-egy munkamenet végén, hogy a másik gépen is folytatható legyen. Rövid maradjon.
 
 - Aktuális cél: az eredeti 2.x firmware feltöltése és beüzemelése (1. cél)
-- Utolsó állapot: almodulok helyreállítva, a build kész (`2.0.0-beta.171+924e662`, esp32-combo); az ESP-n még nincs firmware. Napló: `docs/sajat/2026-11-10-elso-flash-elokeszites.md`
-- Következő lépés: C lépés, USB flash: `.\flash_otgw.bat --port COM5 --bin "build\...-merged-full.bin"`. Új gépen előbb: almodulok, `.\build.bat`, setuptools a `.build-python`-ba (lásd napló)
+- Utolsó állapot (2026-11-10): **az ESP-n fent van a `2.0.0-beta.171+924e662` (esp32-combo)**, USB-n flashelve (factory mód, „Flash complete”). Még nem indult a panelben, nincs Wi-Fi. Napló: `docs/sajat/2026-11-10-elso-flash-elokeszites.md`
+- Következő lépés: **D lépés**: lapka a feszültségmentes panelbe → panel bekapcsolása → `OTGW-<MAC>` AP-n Wi-Fi (Huawei, 192.168.1.x) → IP kikeresése és DHCP-foglalása a routerben → IP beírása a 3. pontba. Utána **E lépés**: web UI IP-címmel (PIC 6.8 látszik-e), telnet napló a 23-as porton. Majd MQTT / Home Assistant.
 - Nyitott kérdések: –
