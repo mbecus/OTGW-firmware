@@ -121,4 +121,5 @@ A **kódolási szabályok** (5. pont és `.claude/rules/` firmware részei) visz
 - Aktuális cél: az eredeti 2.x firmware feltöltése és beüzemelése (1. cél)
 - Utolsó állapot (2026-11-10): **az ESP-n fent van a `2.0.0-beta.171+924e662` (esp32-combo)**, USB-n flashelve (factory mód, „Flash complete”). Még nem indult a panelben, nincs Wi-Fi. Napló: `docs/sajat/2026-11-10-elso-flash-elokeszites.md`
 - Következő lépés: **D lépés**: lapka a feszültségmentes panelbe → panel bekapcsolása → `OTGW-<MAC>` AP-n Wi-Fi (Huawei, 192.168.1.x) → IP kikeresése és DHCP-foglalása a routerben → IP beírása a 3. pontba. Utána **E lépés**: web UI IP-címmel (PIC 6.8 látszik-e), telnet napló a 23-as porton. Majd MQTT / Home Assistant.
+- Új gépen kezdés: `docs/sajat/UJ-GEP-BEALLITAS.md`
 - Nyitott kérdések: –
