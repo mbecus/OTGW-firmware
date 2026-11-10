@@ -119,6 +119,6 @@ A **kódolási szabályok** (5. pont és `.claude/rules/` firmware részei) visz
 > Claude frissíti egy-egy munkamenet végén, hogy a másik gépen is folytatható legyen. Rövid maradjon.
 
 - Aktuális cél: az eredeti 2.x firmware feltöltése és beüzemelése (1. cél)
-- Utolsó állapot: a flash-terv kész (combo build + `flash_otgw.bat` factory mód, `--port COM5 --bin <merged-full>`); a PIC-en 6.8 van; az ESP-n még nincs firmware
-- Következő lépés: a `src/libraries/OpenTherm` és `SimpleTelnet` almodulok helyreállítása (üresek voltak), majd `build.bat` és USB flash
+- Utolsó állapot: almodulok helyreállítva, a build kész (`2.0.0-beta.171+924e662`, esp32-combo); az ESP-n még nincs firmware. Napló: `docs/sajat/2026-11-10-elso-flash-elokeszites.md`
+- Következő lépés: C lépés, USB flash: `.\flash_otgw.bat --port COM5 --bin "build\...-merged-full.bin"`. Új gépen előbb: almodulok, `.\build.bat`, setuptools a `.build-python`-ba (lásd napló)
 - Nyitott kérdések: –
